@@ -1,0 +1,33 @@
+{% extends "index.html"%}
+{%block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Country</th>
+            <th scope="col">Language</th>
+            <th scope="col">Pages</th>
+            <th scope="col">Cover</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.country}}</td>
+            <td>{{book.language}}</td>
+            <td>{{book.pages}}</td>
+            {% if book.img_uploaded %}
+            <td><img src="static/image{{book['id']}}.png" width="50"></td>
+            {% else %}
+            <td><img src="static/missing.png" width="50"></td>
+            {% endif %}
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+{%endblock%}

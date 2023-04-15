@@ -1,0 +1,10 @@
+{% extends "index.html"%}
+
+{% block content %}
+<h1> Add a book</h1>
+<form method="POST" action="/delbook">
+    Book ID to DELETE <input type="number" name="id" />
+    <br>
+    <input type="submit">
+  </form>
+{% endblock %}
